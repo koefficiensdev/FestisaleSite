@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kassza rendszer — FESTISALE | NAV-megfelelő kassza szoftver + NewLand hardver</title>
+  <meta name="description" content="Festisale NAV-megfelelő kassza szoftver NewLand X800 és S90 hardverrel. Készletkezelés, riportok, online számlázás. 25 000 Ft/hó + 0,35%.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link"><span data-i18n="nav.products">Termékek</span>
+            <svg class="nav-dropdown-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="terminalok.html" class="nav-dropdown-item"><strong data-i18n="nav.standalone">Önálló terminálok</strong><span data-i18n="nav.standalone_sub">NewLand S30 · N750 · N950S</span></a>
+            <a href="kassza.html" class="nav-dropdown-item"><strong data-i18n="nav.kassza">Kassza rendszer</strong><span data-i18n="nav.kassza_sub">Festisale + X800 · S90</span></a>
+          </div>
+        </div>
+        <a href="arak.html" class="nav-link" data-i18n="nav.pricing">Árak</a>
+        <a href="kapcsolat.html" class="nav-link" data-i18n="nav.contact">Kapcsolat</a>
+      </div>
+      <div class="nav-cta-group">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="hu">HU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="kapcsolat.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Ajánlatkérés</a>
+        <button class="nav-burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile">
+    <a href="terminalok.html" data-i18n="nav.standalone">Önálló terminálok</a>
+    <a href="kassza.html" data-i18n="nav.kassza">Kassza rendszer</a>
+    <a href="arak.html" data-i18n="nav.pricing">Árak</a>
+    <a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow reveal in"><span data-i18n="kassza.eyebrow">02 — Kassza rendszer</span></div>
+      <h1 class="h-display reveal in">
+        <span data-i18n="kassza.h1_a">NAV-megfelelő kassza,</span><br>
+        <span class="accent" data-i18n="kassza.h1_b">30 perces betanítás.</span>
+      </h1>
+      <p class="lead reveal in" style="margin-top: 28px" data-i18n="kassza.lead">A Festisale szoftver + NewLand kassza hardver = teljes körű megoldás. Készletkezelés, riportok, online számla — egy felületen.</p>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE EXPLORER ============ -->
+  <section class="section-pad bg-light" id="features">
+    <div class="container">
+      <div class="explorer-head reveal">
+        <div>
+          <div class="eyebrow"><span class="section-number">01</span> <span>Funkciók</span></div>
+          <h2 class="h2" style="margin: 14px 0 16px;">Fedezd fel, mit tud a rendszer.</h2>
+          <p class="lead">Az alap csomagban benne van minden, ami a napi működéshez kell. Kattints az extra modulokra, hogy lásd, mivel bővítheted később.</p>
+        </div>
+        <div class="package-card">
+          <div class="pkg-label">Alap csomag</div>
+          <div class="pkg-price">25 000 Ft</div>
+          <div class="pkg-unit">/ hónap</div>
+          <div class="pkg-note">+ hardver egyszeri<br>+ 0,35% forgalmi jutalék</div>
+        </div>
+      </div>
+
+      <!-- Counter row -->
+      <div class="counter-row reveal">
+        <div class="counter-cell">
+          <div class="counter-icon inc">✓</div>
+          <div>
+            <div class="counter-num inc" id="cntBase">12</div>
+            <div class="counter-desc">alap funkció<br>belefoglalva</div>
+          </div>
+        </div>
+        <div class="counter-sep"></div>
+        <div class="counter-cell">
+          <div class="counter-icon add">+</div>
+          <div>
+            <div class="counter-num add" id="cntExtra">0</div>
+            <div class="counter-desc">extra modul<br>kiválasztva</div>
+          </div>
+        </div>
+        <div class="counter-sep"></div>
+        <div class="counter-hint">Kattints az extra modulokra, hogy lásd milyen funkciókkal bővítheted a rendszert.</div>
+        <div class="counter-summary" id="counterSummary">12 funkció összesen</div>
+      </div>
+
+      <!-- Base features -->
+      <div class="feat-category reveal">
+        <div class="cat-label">✓ Alap csomagban benne van</div>
+        <div class="feat-grid" id="baseGrid"></div>
+      </div>
+
+      <!-- Addons dynamically rendered -->
+      <div id="addonCategories"></div>
+
+      <!-- IDEA / DESIGN NOTE: For the polished version, addons could expand
+           into mini-cards on click with a real screenshot of the feature.
+           Currently they toggle on/off and update the counter chip. -->
+    </div>
+  </section>
+
+  <!-- ============ X800 ============ -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="product-block">
+        <div class="product-visual reveal">
+          <span class="float-spec top">8" + 5"</span>
+          <span class="float-spec bot">All-in-one</span>
+          <img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202505/e03260bdd63a6452f6b327e0a498686c.png" alt="NewLand X800">
+        </div>
+        <div class="product-info reveal">
+          <span class="tag" data-i18n="kassza.x800.tag">Smart ECR · dual display</span>
+          <h2 class="h2" data-i18n="kassza.x800.title">NewLand X800</h2>
+          <p class="lead" data-i18n="kassza.x800.sub">Compact. Smart. Engaging. 8" merchant + 5" customer kijelző, beépített nyomtató és scanner.</p>
+          <div class="feature-chips">
+            <div class="feature-chip"><span class="em">🖥️</span> <span data-i18n="kassza.x800.f1">8" + 5" dual display</span></div>
+            <div class="feature-chip"><span class="em">🧾</span> <span data-i18n="kassza.x800.f2">Beépített hőnyomtató</span></div>
+            <div class="feature-chip"><span class="em">📷</span> <span data-i18n="kassza.x800.f3">Vonalkód-olvasó</span></div>
+            <div class="feature-chip"><span class="em">✨</span> <span data-i18n="kassza.x800.f4">Festisale natív integráció</span></div>
+          </div>
+          <table class="spec-table">
+            <tr><td data-i18n="term.spec.hw">Hardver ár</td><td>249 000 Ft</td></tr>
+            <tr><td>Üzemidő</td><td>7+ óra</td></tr>
+            <tr><td>Operációs rendszer</td><td>Android 14</td></tr>
+          </table>
+          <div class="product-cta">
+            <a href="kapcsolat.html" class="btn btn-primary" data-i18n="cta.quote">Ajánlatkérés</a>
+            <a href="kapcsolat.html" class="btn btn-outline" data-i18n="cta.demo">Bemutatót kérek</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S90 DUAL ============ -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="product-block reverse">
+        <div class="product-visual reveal">
+          <span class="float-spec top">6.75"</span>
+          <span class="float-spec bot">20mm slim</span>
+          <img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202511/f860396529bdf40c9ce5fc5e056dd986.png" alt="NewLand S90 Dual">
+        </div>
+        <div class="product-info reveal">
+          <span class="tag" data-i18n="kassza.s90.tag">Prémium portable</span>
+          <h2 class="h2" data-i18n="kassza.s90.title">NewLand S90 Dual</h2>
+          <p class="lead" data-i18n="kassza.s90.sub">Beyond Payment. 6,75" érintőképernyő, dual display, 3500 mAh akku — a teljes kassza a kezedben.</p>
+          <div class="feature-chips">
+            <div class="feature-chip"><span class="em">📱</span> <span data-i18n="kassza.s90.f1">6,75" érintőkijelző</span></div>
+            <div class="feature-chip"><span class="em">🔋</span> <span data-i18n="kassza.s90.f2">64+ óra üzemidő</span></div>
+            <div class="feature-chip"><span class="em">💳</span> <span data-i18n="kassza.s90.f3">2300+ tranzakció / töltés</span></div>
+            <div class="feature-chip"><span class="em">📏</span> <span data-i18n="kassza.s90.f4">20 mm slim profil</span></div>
+          </div>
+          <table class="spec-table">
+            <tr><td data-i18n="term.spec.hw">Hardver ár</td><td>219 000 Ft</td></tr>
+            <tr><td>Akkumulátor</td><td>3500 mAh</td></tr>
+            <tr><td>Standby</td><td>30+ nap</td></tr>
+          </table>
+          <div class="product-cta">
+            <a href="kapcsolat.html" class="btn btn-primary" data-i18n="cta.quote">Ajánlatkérés</a>
+            <a href="kapcsolat.html" class="btn btn-outline" data-i18n="cta.demo">Bemutatót kérek</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ONBOARDING STEPS ============ -->
+  <section class="section-pad bg-light">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-head-left">
+          <div class="eyebrow"><span class="section-number">02</span> <span>Hardver &amp; Bevezetés</span></div>
+          <h2 class="h2" data-i18n="kassza.steps.title">A bevezetés négy lépésben.</h2>
+          <p class="lead" data-i18n="kassza.steps.lead">5 munkanap alatt élesítjük — a megrendeléstől az első valódi vásárlóig.</p>
+        </div>
+      </div>
+
+      <div class="steps reveal-stagger">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4 data-i18n="kassza.steps.s1.t">Terminál szállítás</h4>
+          <p data-i18n="kassza.steps.s1.p">A hardver 2 munkanap alatt megérkezik.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4 data-i18n="kassza.steps.s2.t">NAV regisztráció</h4>
+          <p data-i18n="kassza.steps.s2.p">Mi intézzük az ügyintézést — neked csak egy aláírás kell.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4 data-i18n="kassza.steps.s3.t">Helyszíni betanítás</h4>
+          <p data-i18n="kassza.steps.s3.p">Kollégánk a helyszínen mutatja meg a rendszert.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4 data-i18n="kassza.steps.s4.t">Élesítés</h4>
+          <p data-i18n="kassza.steps.s4.p">Az első valódi tranzakció előtt teszteljük.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section-pad bg-white">
+    <div class="container">
+      <div class="sec-head reveal" style="justify-content:center; text-align:center;">
+        <div class="sec-head-left" style="margin: 0 auto;">
+          <div class="eyebrow" style="justify-content:center"><span class="section-number">03</span> <span>Gyakori kérdések</span></div>
+          <h2 class="h2">Amit a legtöbben kérdeznek a kasszáról.</h2>
+          <p class="lead" style="margin: 0 auto;">Ha valami nem egyértelmű, hívj: <strong style="color:var(--color-orange)">+36 1 555 0100</strong></p>
+        </div>
+      </div>
+
+      <div class="faq-wrap reveal-stagger" id="faqList">
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">A Festisale kassza megfelel a NAV előírásoknak?<span class="faq-arrow">+</span></div>
+          <div class="faq-a"><p>Igen. A rendszer teljes NAV adóügyi nyomtató integrációval rendelkezik, online számlát és blokkot is nyomtat, törvényi megfelelés garantált.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">Hány terminált lehet összekapcsolni egy helyszínen?<span class="faq-arrow">+</span></div>
+          <div class="faq-a"><p>Korlátlan. Az X800 asztali és S90 mobil terminálok is kapcsolódhatnak ugyanahhoz a Festisale rendszerhez — pultonként külön terminállal, közös készlettel és riportokkal.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">Mennyibe kerül a havidíj?<span class="faq-arrow">+</span></div>
+          <div class="faq-a"><p>25 000 Ft/hó a Festisale szoftver díja, plusz 0,35% elfogadói jutalék a kártyás forgalom után. Nincs setup költség, nincs hűségidő.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">Mit tartalmaz a 30 perces betanítás?<span class="faq-arrow">+</span></div>
+          <div class="faq-a"><p>Helyszíni oktatás a Festisale használatáról: termékek felvitele, napi nyitás/zárás, blokk és számla nyomtatás, jelentések olvasása. Magyar nyelvű videós segédanyagok későbbi átismétléshez.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">Foodora, Wolt rendelések integrálva vannak?<span class="faq-arrow">+</span></div>
+          <div class="faq-a"><p>Igen — Foodora, Wolt, Wolt Direct és Falatozz.hu rendelések automatikus importtal, valós idejű szinkronnal. Külön kiegészítő modulként kapcsolható be.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">Mi a teendő, ha elromlik a hardver?<span class="faq-arrow">+</span></div>
+          <div class="faq-a"><p>Magyar nyelvű ügyfélszolgálat, 24/7 elérhető. Csereterminál program: 1 munkanapon belül helyettesítő terminált küldünk, hogy a forgalom ne álljon meg.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IN-PAGE QUICK ORDER FORM ============ -->
+  <section class="bg-navy section-pad" id="order">
+    <div class="container">
+      <div class="quick-order">
+        <div class="quick-order-info reveal">
+          <div class="eyebrow"><span class="section-number">04</span> <span>Ajánlatkérő</span></div>
+          <h2 class="h2" style="margin: 14px 0 18px;">Kérj ajánlatot — 24h-n belül visszahívunk.</h2>
+          <p class="lead">Nem kell előre döntened. Értékesítőnk felhív, megbeszéli az igényeket, és személyre szabott ajánlatot küld a Festisale csomagra.</p>
+          <ul class="qo-promise-list">
+            <li><div class="qo-ico">📞</div> Visszahívás 24 órán belül, munkanapokon</li>
+            <li><div class="qo-ico">📦</div> Kiszállítás 1–2 munkanapon belül</li>
+            <li><div class="qo-ico">🎓</div> Helyszíni betanítás, 30 perces rendszerindítás</li>
+            <li><div class="qo-ico">🔒</div> Bizalmasan kezeljük az adataid — semmilyen marketing levél</li>
+          </ul>
+        </div>
+
+        <form class="quick-form reveal" id="quickOrderForm" novalidate>
+          <div class="quick-form-title">Festisale ajánlatkérő</div>
+
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qfName">Név *</label>
+              <input type="text" id="qfName" placeholder="Kovács János" required>
+            </div>
+            <div class="qf-field">
+              <label for="qfPhone">Telefon *</label>
+              <input type="tel" id="qfPhone" placeholder="+36 30 XXX XXXX" required>
+            </div>
+          </div>
+
+          <div class="qf-field">
+            <label for="qfEmail">E-mail</label>
+            <input type="email" id="qfEmail" placeholder="info@uzletem.hu">
+          </div>
+
+          <div class="qf-field">
+            <label>Melyik megoldás érdekel?</label>
+            <div class="qf-pick" id="qfPick">
+              <div class="qf-pick-opt sel" data-val="kassza">Festisale kassza</div>
+              <div class="qf-pick-opt" data-val="standalone">Önálló kártyaelfogadás</div>
+              <div class="qf-pick-opt" data-val="both">Mindkettő</div>
+              <div class="qf-pick-opt" data-val="unsure">Még nem tudom</div>
+            </div>
+          </div>
+
+          <div class="qf-field">
+            <label for="qfType">Üzlet típusa</label>
+            <select id="qfType">
+              <option value="">Válassz…</option>
+              <option>Étterem / kocsma / kávézó</option>
+              <option>Kiskereskedés / bolt</option>
+              <option>Pékség / cukrászda</option>
+              <option>Pláza / stand</option>
+              <option>Szálláshely</option>
+              <option>Catering / rendezvény</option>
+              <option>Egyéb szolgáltatás</option>
+            </select>
+          </div>
+
+          <div class="qf-field">
+            <label for="qfMsg">Üzenet (opcionális)</label>
+            <textarea id="qfMsg" rows="2" placeholder="Pl. 2 terminált szeretnék, egy boltba és egy kiszállítónak…"></textarea>
+          </div>
+
+          <label class="qf-consent">
+            <input type="checkbox" id="qfConsent">
+            <span>Elfogadom az <a href="#">Adatkezelési tájékoztatót</a> és az <a href="#">ÁSZF</a>-et.</span>
+          </label>
+
+          <button type="submit" class="qf-submit">Ajánlatot kérek — visszahívnak 24h-n belül ✓</button>
+          <div class="qf-foot">🔒 Adataid bizalmasan kezeljük</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS OVERLAY -->
+  <div class="success-overlay" id="successOverlay" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <h2 id="successTitle">Megkaptuk az igénylésed!</h2>
+      <p>Értékesítőnk <strong>24 órán belül</strong> felhív, hogy egyeztessen a részletekről és a szállítási dátumról.</p>
+      <p style="font-size:13px; color:var(--color-gray-soft); margin-bottom: 0;">Addig is, ha sürgős: <strong style="color:var(--color-navy);">+36 1 555 0100</strong></p>
+      <button class="success-close" onclick="document.getElementById('successOverlay').classList.remove('show')">Rendben, várom a hívást</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="color:#fff"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></div>
+          <p data-i18n="footer.tagline">Modern, bankfüggetlen kártyaelfogadás magyar kereskedőknek.</p>
+        </div>
+        <div><h5 data-i18n="footer.products">Termékek</h5><ul>
+          <li><a href="terminalok.html" data-i18n="nav.standalone">Önálló terminálok</a></li>
+          <li><a href="kassza.html" data-i18n="nav.kassza">Kassza rendszer</a></li>
+          <li><a href="arak.html" data-i18n="nav.pricing">Árak</a></li>
+        </ul></div>
+        <div><h5 data-i18n="footer.company">Cég</h5><ul>
+          <li><a href="#" data-i18n="footer.about">Rólunk</a></li>
+          <li><a href="#" data-i18n="footer.partners">Partnerek</a></li>
+          <li><a href="#" data-i18n="footer.careers">Karrier</a></li>
+        </ul></div>
+        <div><h5 data-i18n="footer.support">Support</h5><ul>
+          <li><a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a></li>
+          <li><a href="#" data-i18n="footer.help">Súgóközpont</a></li>
+          <li><a href="#" data-i18n="footer.status">Rendszerstátusz</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.copy">© 2026 FESTIPAY Zrt. — Minden jog fenntartva.</div>
+        <div style="display:flex;gap:24px"><a href="#" data-i18n="footer.privacy">Adatkezelés</a><a href="#" data-i18n="footer.terms">ÁSZF</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY BOTTOM CTA BAR ============ -->
+  <div class="sticky-cta" id="stickyCta" role="region" aria-label="Quick CTA">
+    <div class="sticky-cta-inner">
+      <div class="sticky-cta-text">
+        <strong>Festisale kassza — meggyőztünk?</strong>
+        <span>Kérj ajánlatot most — 24 órán belül visszahívunk.</span>
+      </div>
+      <div class="sticky-cta-actions">
+        <a href="tel:+3615550100" class="sticky-cta-phone">📞 +36 1 555 0100</a>
+        <a href="#order" class="btn btn-primary">Ajánlatot kérek →</a>
+        <button class="sticky-cta-close" aria-label="Bezár" onclick="document.getElementById('stickyCta').classList.remove('visible')">×</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

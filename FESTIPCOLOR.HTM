@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FestiPay — Brand Design Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:   #264B5D;
+    --orange:    #F48120;
+    --white:     #FFFFFF;
+    --light-bg:  #F2F2F2;
+    --form-bg:   #EFEFEF;
+    --dark-text: #5D5D5D;
+    --mid-text:  #999999;
+    --gold:      #FECF3B;
+    --yellow:    #FFCA18;
+    --info-blue: #0097C6;
+    --dark:      #333333;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: var(--dark);
+    background: #fff;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--primary);
+    color: #fff;
+    padding: 80px 60px 60px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-logo { height: 70px; margin-bottom: 40px; }
+  .cover h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .cover p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .6;
+    margin-top: 12px;
+  }
+  .cover-meta {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: .5;
+    margin-top: 40px;
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 960px; margin: 0 auto; padding: 60px 40px; }
+  .section-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 32px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  h2.block-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid-text);
+    margin-bottom: 8px;
+  }
+  .divider {
+    height: 1px;
+    background: #eee;
+    margin: 60px 0;
+  }
+
+  /* ── COLOURS ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .swatch {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .swatch-block {
+    height: 100px;
+  }
+  .swatch-info {
+    padding: 12px 14px;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+  }
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .swatch-hex {
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--mid-text);
+  }
+  .swatch-role {
+    font-size: 10px;
+    color: #bbb;
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .type-specimen {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+  }
+  .type-specimen .meta {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid-text);
+    margin-bottom: 16px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .font-display-sansation {
+    font-family: 'Roboto Condensed', sans-serif; /* closest web substitute shown */
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--primary);
+    line-height: 1.1;
+    letter-spacing: 1px;
+  }
+  .font-display-bold {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+  }
+  .font-display-adventor {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--dark-text);
+    line-height: 1.7;
+  }
+  .font-nav {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .font-caption {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid-text);
+  }
+  .type-scale-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .type-scale-row:last-child { border-bottom: 0; }
+  .type-scale-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #bbb;
+    width: 90px;
+    flex-shrink: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .type-scale-sample {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--primary);
+  }
+
+  /* ── LOGOS ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .logo-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-bg {
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+  }
+  .logo-bg img { max-height: 70px; max-width: 100%; }
+  .logo-bg.dark  { background: var(--primary); }
+  .logo-bg.white { background: #ffffff; border-bottom: 1px solid #eee; }
+  .logo-bg.grey  { background: var(--light-bg); border-bottom: 1px solid #eee; }
+  .logo-caption {
+    padding: 12px 16px;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+  }
+  .logo-caption span {
+    display: block;
+    font-size: 11px;
+    color: var(--mid-text);
+    letter-spacing: .5px;
+  }
+  .logo-caption strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+  }
+  .logo-dims { font-size: 10px; color: #bbb; }
+
+  /* ── UI PATTERNS ── */
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .pattern-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .pattern-preview {
+    padding: 32px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    background: var(--light-bg);
+  }
+  .pattern-label {
+    padding: 12px 16px;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    font-size: 11px;
+    color: var(--mid-text);
+  }
+  .pattern-label strong { display: block; font-size: 12px; color: #333; margin-bottom: 2px; }
+
+  /* Button specimens */
+  .btn-primary {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 11px 28px;
+    border-radius: 4px;
+    border: 2px solid var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Tilted title specimen */
+  .tilt-box {
+    width: 200px;
+    background: #fff;
+    text-align: center;
+    padding: 50px 16px 20px;
+    transform: rotate(-4deg);
+    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  }
+  .tilt-box h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary);
+  }
+  .tilt-box.teal { background: var(--primary); }
+  .tilt-box.teal h3 { color: #fff; }
+
+  /* Nav specimen */
+  .nav-specimen {
+    background: var(--primary);
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    border-radius: 6px;
+  }
+  .nav-specimen .nav-link {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .nav-specimen .nav-link.hover { color: var(--orange); }
+  .nav-specimen .nav-logo { height: 30px; }
+
+  /* Footer specimen */
+  .footer-specimen {
+    background: var(--primary);
+    color: #fff;
+    padding: 20px 28px;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .footer-specimen a { color: #fff; text-decoration: none; }
+
+  /* ── ICON COLOURS ── */
+  .icon-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+    background: var(--light-bg);
+    border-radius: 6px;
+  }
+  .icon-badge {
+    width: 52px; height: 52px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .icon-badge.fb   { background: #0071B6; }
+  .icon-badge.li   { background: #0097C6; }
+  .icon-badge.tw   { background: #00C4FF; }
+  .icon-badge.yt   { background: #E62117; }
+  .icon-badge.ig   { background: #4C3C38; }
+
+  /* ── SPACING / MOTION notes ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .info-card {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+  .info-card h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 14px;
+  }
+  .info-card p, .info-card li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--dark-text);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+  .info-card ul { list-style: none; padding: 0; }
+  .info-card ul li::before { content: "—  "; color: var(--orange); }
+
+  /* ── TOC ── */
+  .toc { background: var(--light-bg); border-radius: 8px; padding: 28px 32px; }
+  .toc h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc ol li { counter-increment: toc; padding: 6px 0; border-bottom: 1px solid #e0e0e0; }
+  .toc ol li:last-child { border: 0; }
+  .toc ol li::before {
+    content: "0" counter(toc) ". ";
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--orange);
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    margin-right: 8px;
+  }
+  .toc ol li span { font-size: 13px; color: var(--dark-text); font-family: 'Open Sans', sans-serif; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ COVER ══════════════════ -->
+<div class="cover">
+  <div>
+    <img src="https://www.festipay.com/wp-content/uploads/2016/05/festipay_logo_inverz_monokrom.png"
+         class="cover-logo" alt="FestiPay logo" onerror="this.style.display='none'">
+    <h1>Brand Design<br>Book</h1>
+    <p>Visual identity guidelines — festipay.hu</p>
+  </div>
+  <div class="cover-meta">FestiPay Zrt. · Cashless Payment Solutions · 2026</div>
+</div>
+
+<!-- ══════════════════ TOC ══════════════════ -->
+<div class="page">
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><span>Brand Colours</span></li>
+      <li><span>Typography</span></li>
+      <li><span>Logo Usage</span></li>
+      <li><span>UI Patterns &amp; Components</span></li>
+      <li><span>Social Icons</span></li>
+      <li><span>Design Principles</span></li>
+    </ol>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ 01 COLOURS ══════════════════ -->
+  <div class="section-title">01 — Brand Colours</div>
+
+  <h2 class="block-label" style="margin-bottom:20px;">Primary palette</h2>
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#264B5D;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">FestiPay Teal</span>
+        <span class="swatch-hex">#264B5D</span>
+        <span class="swatch-role">Primary brand · backgrounds · headings</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F48120;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">FestiPay Orange</span>
+        <span class="swatch-hex">#F48120</span>
+        <span class="swatch-role">Accent · CTA buttons · hover states</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFF; border: 1px solid #eee;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">White</span>
+        <span class="swatch-hex">#FFFFFF</span>
+        <span class="swatch-role">Backgrounds · text on dark</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FECF3B;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Gold</span>
+        <span class="swatch-hex">#FECF3B</span>
+        <span class="swatch-role">Highlights · popup headings</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFCA18;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Yellow</span>
+        <span class="swatch-hex">#FFCA18</span>
+        <span class="swatch-role">Read-more links · emphasis</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#0097C6;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Info Blue</span>
+        <span class="swatch-hex">#0097C6</span>
+        <span class="swatch-role">LinkedIn brand · info elements</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="block-label" style="margin-top:36px; margin-bottom:20px;">Neutral palette</h2>
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#5D5D5D;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Dark Grey</span>
+        <span class="swatch-hex">#5D5D5D</span>
+        <span class="swatch-role">Mobile nav links · body text</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#999999;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Mid Grey</span>
+        <span class="swatch-hex">#999999</span>
+        <span class="swatch-role">Meta text · captions · dates</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F2F2F2; border: 1px solid #eee;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Light Grey</span>
+        <span class="swatch-hex">#F2F2F2</span>
+        <span class="swatch-role">Section backgrounds</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#EFEFEF; border: 1px solid #eee;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Form Grey</span>
+        <span class="swatch-hex">#EFEFEF</span>
+        <span class="swatch-role">Form fields · input backgrounds</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#000000;"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Preloader Black</span>
+        <span class="swatch-hex">#000000</span>
+        <span class="swatch-role">Page preloader · overlays</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ 02 TYPOGRAPHY ══════════════════ -->
+  <div class="section-title">02 — Typography</div>
+
+  <div class="type-specimen">
+    <div class="meta">Primary brand typeface · Sansation (custom webfont)</div>
+    <div class="font-display-sansation">Sansation Light</div>
+    <div style="font-family:'Roboto Condensed',sans-serif; font-size:42px; font-weight:400; color:#264B5D; margin-top:8px;">Sansation Regular</div>
+    <div class="font-display-bold" style="margin-top:8px;">Sansation Bold</div>
+    <div style="margin-top:14px; font-family:'Open Sans',sans-serif; font-size:13px; color:#999; letter-spacing:1px;">
+      Used for: all body copy, headings (h1–h6), navigation, UI labels<br>
+      Fallback stack: 'sansation', 'Open Sans', sans-serif
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="meta">Display / accent · Adventor (TeX Gyre Adventor, custom webfont)</div>
+    <div class="font-display-adventor">Adventor Display</div>
+    <div style="margin-top:14px; font-family:'Open Sans',sans-serif; font-size:13px; color:#999; letter-spacing:1px;">
+      Used for: large decorative headings and display text
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="meta">Web-safe supplements · Google Fonts (loaded as fallbacks)</div>
+    <div style="font-family:'Roboto Condensed',sans-serif; font-weight:300; font-size:28px; color:#264B5D;">Roboto Condensed Light 300</div>
+    <div style="font-family:'Roboto Condensed',sans-serif; font-weight:400; font-size:28px; color:#264B5D;">Roboto Condensed Regular 400</div>
+    <div style="font-family:'Roboto Condensed',sans-serif; font-weight:700; font-size:28px; color:#264B5D;">Roboto Condensed Bold 700</div>
+    <div style="font-family:'Open Sans',sans-serif; font-weight:300; font-size:18px; color:#5D5D5D; margin-top:14px;">Open Sans Light 300 — body text</div>
+    <div style="font-family:'Open Sans',sans-serif; font-weight:400; font-size:18px; color:#5D5D5D;">Open Sans Regular 400 — body text</div>
+    <div style="font-family:'Open Sans',sans-serif; font-weight:600; font-size:18px; color:#5D5D5D;">Open Sans SemiBold 600 — UI labels</div>
+    <div style="font-family:'Open Sans',sans-serif; font-weight:700; font-size:18px; color:#5D5D5D;">Open Sans Bold 700 — emphasis</div>
+  </div>
+
+  <h2 class="block-label" style="margin-top:36px; margin-bottom:20px;">Type scale</h2>
+  <div style="background:#fafafa; border-radius:8px; padding:24px 28px; border: 1px solid #eee;">
+    <div class="type-scale-row">
+      <span class="type-scale-label">Hero / H1<br>38–48px</span>
+      <div class="type-scale-sample" style="font-size:38px; font-weight:300;">NFC/RFID Cashless Events</div>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">Section H1<br>34px</span>
+      <div class="type-scale-sample" style="font-size:34px; font-weight:300;">Szolgáltatásaink</div>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">H2 / H3<br>24–30px</span>
+      <div class="type-scale-sample" style="font-size:26px; font-weight:400;">Our Integrated Platform</div>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">Body<br>15px</span>
+      <div style="font-family:'Open Sans',sans-serif; font-size:15px; font-weight:300; color:#5D5D5D; line-height:1.7;">FestiPay provides integrated cashless payment solutions for large-scale events and festivals.</div>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">Nav / Caption<br>11px</span>
+      <div class="font-nav">Services&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;Contact</div>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">Meta<br>11px</span>
+      <div class="font-caption">June 5, 2026 &nbsp;·&nbsp; Cashless Payments</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ 03 LOGOS ══════════════════ -->
+  <div class="section-title">03 — Logo Usage</div>
+
+  <div class="logo-grid">
+    <div class="logo-card">
+      <div class="logo-bg dark">
+        <img src="https://www.festipay.com/wp-content/uploads/2016/05/festipay_logo_inverz_monokrom.png" alt="FestiPay inverse logo">
+      </div>
+      <div class="logo-caption">
+        <strong>Inverse / Monochrome</strong>
+        <span>Use on dark / teal backgrounds</span>
+        <span class="logo-dims">White knockout on #264B5D</span>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-bg white">
+        <img src="https://www.festipay.com/wp-content/uploads/2016/05/festipay_logo_rgb-257.png" alt="FestiPay colour logo">
+      </div>
+      <div class="logo-caption">
+        <strong>Colour (RGB)</strong>
+        <span>Use on white / light backgrounds</span>
+        <span class="logo-dims">Full colour version · navbar sticky state</span>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-bg grey">
+        <img src="https://www.festipay.com/wp-content/uploads/2015/12/festipay-logo.png" alt="FestiPay original logo">
+      </div>
+      <div class="logo-caption">
+        <strong>Original</strong>
+        <span>Primary logo mark</span>
+        <span class="logo-dims">308 × 129 px · schema.org canonical</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#fff3e8; border-left:4px solid #F48120; padding:18px 22px; border-radius:0 6px 6px 0; margin-top:28px;">
+    <p style="font-size:13px; font-weight:600; color:#F48120; margin-bottom:6px;">Logo usage notes</p>
+    <p style="font-size:13px; color:#5D5D5D; line-height:1.7;">
+      The logo is always linked to the homepage. On the hero/fullscreen slider the transparent navbar shows the monochrome inverse variant. Once the page scrolls past 100px, the sticky ("ragadós") navbar locks to the top and shows the colour RGB variant on a white background. The mobile logo is the colour RGB variant at 50px height.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ 04 UI PATTERNS ══════════════════ -->
+  <div class="section-title">04 — UI Patterns &amp; Components</div>
+
+  <div class="pattern-grid">
+
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:#264B5D; gap:24px;">
+        <div class="tilt-box"><h3>Services</h3></div>
+        <div class="tilt-box teal"><h3>Team</h3></div>
+      </div>
+      <div class="pattern-label">
+        <strong>Tilted Section Titles</strong>
+        Decorative white (or teal) boxes rotated ±4°. Used as section dividers. Padding top is exaggerated (80px) to float above the background image below.
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-preview" style="flex-direction:column; gap:14px; align-items:flex-start;">
+        <button class="btn-primary">Get Started →</button>
+        <button class="btn-secondary">Learn More</button>
+        <a style="font-size:13px; font-weight:600; font-family:'Open Sans',sans-serif; color:#F48120; letter-spacing:1px; text-transform:uppercase; text-decoration:none;">Read More →</a>
+      </div>
+      <div class="pattern-label">
+        <strong>Buttons &amp; CTAs</strong>
+        Primary: orange fill (#F48120) · white text · rounded 4px. Secondary: teal border (#264B5D). Text links in orange for inline CTAs.
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-preview" style="padding:0; overflow:hidden;">
+        <div class="nav-specimen" style="border-radius:0; width:100%;">
+          <img src="https://www.festipay.com/wp-content/uploads/2016/05/festipay_logo_inverz_monokrom.png" class="nav-logo" alt="" onerror="this.style.display='none'">
+          <a class="nav-link">Services</a>
+          <a class="nav-link hover">About</a>
+          <a class="nav-link">Contact</a>
+        </div>
+      </div>
+      <div class="pattern-label">
+        <strong>Navigation Bar</strong>
+        Transparent on hero scroll position. Sticky at top after 100px scroll. Links: 11px · uppercase · letter-spacing 1px. Hover colour: #F48120.
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-preview" style="padding:0; overflow:hidden;">
+        <div class="footer-specimen" style="border-radius:0; width:100%;">
+          <strong style="font-size:13px; letter-spacing:1px; font-family:'Open Sans',sans-serif;">FestiPay Zrt.</strong><br>
+          <span>info@festipay.com &nbsp;·&nbsp; +36 1 234 5678</span><br>
+          <span style="opacity:.6; font-size:11px; margin-top:6px; display:block;">© 2026 FestiPay. All rights reserved.</span>
+        </div>
+      </div>
+      <div class="pattern-label">
+        <strong>Footer</strong>
+        Background #264B5D · all text white · body 12px · links white, no underline. Font size 12px.
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-preview" style="flex-direction:column; gap:8px; align-items:stretch;">
+        <input type="text" placeholder="Your name"
+          style="padding:8px 12px; background:#EFEFEF; border:0; font-family:'Open Sans',sans-serif; font-size:13px; border-radius:2px; outline:none; width:100%;">
+        <textarea placeholder="Your message" rows="2"
+          style="padding:8px 12px; background:#EFEFEF; border:0; font-family:'Open Sans',sans-serif; font-size:13px; border-radius:2px; outline:none; resize:none; width:100%;"></textarea>
+        <button class="btn-primary" style="width:100%;">Send</button>
+      </div>
+      <div class="pattern-label">
+        <strong>Form Fields</strong>
+        Background #EFEFEF · no border · padding 2px 5px · line-height 23px. Submit: full-width, orange, text #264B5D.
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:#264B5D; position:relative; overflow:hidden;">
+        <div style="width:100%; height:90px; background:url('https://festipay.hu/wp-content/uploads/2019/07/MMI_7013.jpg') center/cover; position:relative;">
+          <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.48); padding:10px 14px;">
+            <span style="font-size:12px; color:#fff; font-family:'Open Sans',sans-serif;">Latest news article title here</span>
+          </div>
+        </div>
+      </div>
+      <div class="pattern-label">
+        <strong>News / Blog Cards</strong>
+        16:9 image · dark overlay at bottom rgba(0,0,0,0.48) · white title text overlaid. Grid: 1 large + 2×2 smaller.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ 05 SOCIAL ICONS ══════════════════ -->
+  <div class="section-title">05 — Social Icon Colours</div>
+
+  <div class="icon-row">
+    <div class="icon-badge fb">f</div>
+    <div style="font-family:'Open Sans',sans-serif; font-size:13px;">
+      <strong>Facebook</strong>
+      <div style="font-family:monospace; font-size:11px; color:#999;">#0071B6</div>
+    </div>
+    <div style="width:24px;"></div>
+    <div class="icon-badge li">in</div>
+    <div style="font-family:'Open Sans',sans-serif; font-size:13px;">
+      <strong>LinkedIn</strong>
+      <div style="font-family:monospace; font-size:11px; color:#999;">#0097C6</div>
+    </div>
+    <div style="width:24px;"></div>
+    <div class="icon-badge tw">t</div>
+    <div style="font-family:'Open Sans',sans-serif; font-size:13px;">
+      <strong>Twitter</strong>
+      <div style="font-family:monospace; font-size:11px; color:#999;">#00C4FF</div>
+    </div>
+    <div style="width:24px;"></div>
+    <div class="icon-badge yt">▶</div>
+    <div style="font-family:'Open Sans',sans-serif; font-size:13px;">
+      <strong>YouTube</strong>
+      <div style="font-family:monospace; font-size:11px; color:#999;">#E62117</div>
+    </div>
+    <div style="width:24px;"></div>
+    <div class="icon-badge ig">◉</div>
+    <div style="font-family:'Open Sans',sans-serif; font-size:13px;">
+      <strong>Instagram</strong>
+      <div style="font-family:monospace; font-size:11px; color:#999;">#4C3C38</div>
+    </div>
+  </div>
+  <p style="font-size:12px; color:#bbb; margin-top:10px; font-family:'Open Sans',sans-serif;">
+    Icons: Font Awesome 4.5 · 52×52px · border-radius 10px · white icon on coloured badge
+  </p>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════ 06 PRINCIPLES ══════════════════ -->
+  <div class="section-title">06 — Design Principles</div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Motion &amp; Animation</h3>
+      <ul>
+        <li>Navbar sticky transition: 0.5s ease-in-out</li>
+        <li>Page preloader with spinner animation</li>
+        <li>Hero slider: LayerSlider, 7000ms per slide, transition-2D type 11</li>
+        <li>Slide-in elements: durationIn 700ms, delay 200–700ms</li>
+        <li>Smooth scroll: enabled for Chrome via smoothscroll.js</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>Layout &amp; Grid</h3>
+      <ul>
+        <li>Full-width layout above 1000px (max-width: 100%)</li>
+        <li>Content container: max-width 1200px, centred</li>
+        <li>Bootstrap 4 grid (12-column), plus custom 5-column (20% each)</li>
+        <li>Section padding: generally 60–80px vertical</li>
+        <li>No left/right borders above 1000px</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>Tone &amp; Language</h3>
+      <ul>
+        <li>Bilingual: Hungarian (primary) + English</li>
+        <li>All-caps headlines, tight letter-spacing</li>
+        <li>Industry keywords: NFC/RFID, cashless, integrated, real-time</li>
+        <li>Uppercase navigation links, 1px letter-spacing</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>Photography Style</h3>
+      <ul>
+        <li>Festival crowd shots, outdoor events, wristband close-ups</li>
+        <li>Dark overlay (rgba 0,0,0,0.5) on hero images</li>
+        <li>Hero text boxes on brand-teal (#274B5C) background</li>
+        <li>Team photos: 250×250px square crops, neutral bg</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer of doc -->
+  <div style="margin-top:60px; padding-top:24px; border-top:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
+    <span style="font-size:11px; color:#bbb; font-family:'Open Sans',sans-serif; letter-spacing:1px;">FESTIPAY ZRT. — BRAND DESIGN BOOK</span>
+    <span style="font-size:11px; color:#bbb; font-family:'Open Sans',sans-serif; letter-spacing:1px;">JUNE 2026</span>
+  </div>
+</div>
+
+</body>
+</html>

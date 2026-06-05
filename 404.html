@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — FESTISALE</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: var(--color-navy-deep); color: var(--color-white); min-height: 100vh; display: flex; flex-direction: column; }
+    .e404 { flex: 1; display: grid; place-items: center; padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
+    .e404::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(800px 500px at 50% 40%, rgba(0,184,138,.18), transparent 60%);
+    }
+    .e404-num {
+      font-family: var(--font-mono);
+      font-size: clamp(120px, 22vw, 240px);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: 1;
+      background: linear-gradient(180deg, var(--color-orange), var(--color-orange-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+    .e404 .container { position: relative; z-index: 1; }
+    .e404 h1 { margin-bottom: 16px; }
+    .e404 .lead { margin: 0 auto 36px; color: rgba(255,255,255,.7); }
+    .e404 .btn-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></a>
+      <div class="nav-links">
+        <a href="terminalok.html" class="nav-link" data-i18n="nav.standalone">Önálló terminálok</a>
+        <a href="kassza.html" class="nav-link" data-i18n="nav.kassza">Kassza rendszer</a>
+        <a href="arak.html" class="nav-link" data-i18n="nav.pricing">Árak</a>
+        <a href="kapcsolat.html" class="nav-link" data-i18n="nav.contact">Kapcsolat</a>
+      </div>
+      <div class="nav-cta-group">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="hu">HU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="kapcsolat.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Ajánlatkérés</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="e404">
+    <div class="container">
+      <div class="e404-num">404</div>
+      <h1 class="h1">Ez az oldal nem létezik.</h1>
+      <p class="lead">Lehet, hogy elgépelted a címet, vagy az oldal időközben elköltözött. Visszairányítunk a főoldalra.</p>
+      <div class="btn-group">
+        <a href="index.html" class="btn btn-primary btn-lg">Főoldalra</a>
+        <a href="kapcsolat.html" class="btn btn-outline-light btn-lg">Kapcsolat</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
