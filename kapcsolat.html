@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kapcsolat — FESTISALE | Ajánlatkérés &amp; bemutató</title>
+  <meta name="description" content="Vegye fel a kapcsolatot a FESTISALE csapatával. Ajánlatkérés, helyszíni bemutató, magyar nyelvű support. 1 munkanapon belüli visszajelzés.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link"><span data-i18n="nav.products">Termékek</span>
+            <svg class="nav-dropdown-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="terminalok.html" class="nav-dropdown-item"><strong data-i18n="nav.standalone">Önálló terminálok</strong><span data-i18n="nav.standalone_sub">NewLand S30 · N750 · N950S</span></a>
+            <a href="kassza.html" class="nav-dropdown-item"><strong data-i18n="nav.kassza">Kassza rendszer</strong><span data-i18n="nav.kassza_sub">Festisale + X800 · S90</span></a>
+          </div>
+        </div>
+        <a href="arak.html" class="nav-link" data-i18n="nav.pricing">Árak</a>
+        <a href="kapcsolat.html" class="nav-link active" data-i18n="nav.contact">Kapcsolat</a>
+      </div>
+      <div class="nav-cta-group">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="hu">HU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="kapcsolat.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Ajánlatkérés</a>
+        <button class="nav-burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile">
+    <a href="terminalok.html" data-i18n="nav.standalone">Önálló terminálok</a>
+    <a href="kassza.html" data-i18n="nav.kassza">Kassza rendszer</a>
+    <a href="arak.html" data-i18n="nav.pricing">Árak</a>
+    <a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow reveal in"><span data-i18n="contact.eyebrow">04 — Kapcsolat</span></div>
+      <h1 class="h-display reveal in">
+        <span data-i18n="contact.h1_a">Beszéljünk az</span>
+        <span class="accent">üzletedről.</span>
+      </h1>
+      <p class="lead reveal in" style="margin-top: 28px" data-i18n="contact.lead">Töltsd ki az űrlapot, vagy hívj minket — egy munkanap alatt visszajelzünk testreszabott ajánlattal.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT GRID ============ -->
+  <section class="section-pad bg-light">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- FORM -->
+        <div class="reveal">
+          <form class="form" id="contact-form" novalidate>
+            <div class="form-row two">
+              <div class="form-field">
+                <label for="f-name"><span data-i18n="form.name">Teljes név</span> <span class="req">*</span></label>
+                <input type="text" id="f-name" name="name" required>
+              </div>
+              <div class="form-field">
+                <label for="f-company"><span data-i18n="form.company">Cég neve</span> <span class="req">*</span></label>
+                <input type="text" id="f-company" name="company" required>
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div class="form-field">
+                <label for="f-email"><span data-i18n="form.email">E-mail</span> <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" required>
+              </div>
+              <div class="form-field">
+                <label for="f-phone" data-i18n="form.phone">Telefon</label>
+                <input type="tel" id="f-phone" name="phone">
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div class="form-field">
+                <label for="f-seg"><span data-i18n="form.segment">Szegmens</span> <span class="req">*</span></label>
+                <select id="f-seg" name="segment" required>
+                  <option value="" data-i18n="form.segment_ph">Válaszd ki...</option>
+                  <option value="retail" data-i18n="seg.retail.t">Kiskereskedelem</option>
+                  <option value="hospo" data-i18n="seg.hospo.t">Vendéglátás</option>
+                  <option value="mobile" data-i18n="seg.mobile.t">Mobil / stand</option>
+                  <option value="service" data-i18n="seg.service.t">Szolgáltatás</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="f-prod" data-i18n="form.product">Érdeklő termék</label>
+                <select id="f-prod" name="product">
+                  <option value="any" data-i18n="form.product_ph">Bármi érdekel</option>
+                  <option value="standalone" data-i18n="nav.standalone">Önálló terminálok</option>
+                  <option value="kassza" data-i18n="nav.kassza">Kassza rendszer</option>
+                  <option value="s30">NewLand S30</option>
+                  <option value="n750">NewLand N750</option>
+                  <option value="n950s">NewLand N950S</option>
+                  <option value="x800">NewLand X800</option>
+                  <option value="s90">NewLand S90 Dual</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-msg" data-i18n="form.message">Megjegyzés</label>
+                <textarea id="f-msg" name="message" rows="4" data-i18n-placeholder="form.message_ph" placeholder="Pár szó az üzletről, jelenlegi rendszerről, igényekről..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" data-i18n="form.submit">Ajánlatot kérek</button>
+          </form>
+
+          <div class="form-success" id="form-success" style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); margin-top: 0">
+            <div class="form-success-icon">✓</div>
+            <h3 class="h3" data-i18n="form.success.t">Köszönjük!</h3>
+            <p style="color: var(--color-gray); margin-top: 12px; max-width: 36ch; margin-left: auto; margin-right: auto" data-i18n="form.success.p">Egy munkanap alatt visszajelzünk a megadott e-mail címen.</p>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-info reveal">
+          <div class="contact-info-card">
+            <h4 data-i18n="contact.info.t">Elérhetőségek</h4>
+
+            <div class="contact-info-item">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div>
+                <div class="lbl" data-i18n="contact.info.phone">Telefon</div>
+                <a href="tel:+3615550100" class="val">+36 1 555 0100</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div>
+                <div class="lbl" data-i18n="contact.info.email">E-mail</div>
+                <a href="mailto:info@festipay.hu" class="val">info@festipay.hu</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <div class="lbl" data-i18n="contact.info.hours">Nyitvatartás</div>
+                <div class="val" data-i18n="contact.info.hours_val">H–P: 8–18 · Sz: 10–14</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <div class="lbl" data-i18n="contact.info.address">Iroda</div>
+                <div class="val" data-i18n="contact.info.address_val">1054 Budapest, Báthory u. 12.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="promise">
+            <h4 data-i18n="promise.t">Az ígéretünk</h4>
+            <ul>
+              <li><span data-i18n="promise.p1">1 munkanapon belül visszajelzés</span></li>
+              <li><span data-i18n="promise.p2">Helyszíni bemutató díjmentesen</span></li>
+              <li><span data-i18n="promise.p3">Nincs rejtett költség, nincs hűségidő</span></li>
+              <li><span data-i18n="promise.p4">24/7 magyar nyelvű support</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="color:#fff"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></div>
+          <p data-i18n="footer.tagline">Modern, bankfüggetlen kártyaelfogadás magyar kereskedőknek.</p>
+        </div>
+        <div><h5 data-i18n="footer.products">Termékek</h5><ul>
+          <li><a href="terminalok.html" data-i18n="nav.standalone">Önálló terminálok</a></li>
+          <li><a href="kassza.html" data-i18n="nav.kassza">Kassza rendszer</a></li>
+          <li><a href="arak.html" data-i18n="nav.pricing">Árak</a></li>
+        </ul></div>
+        <div><h5 data-i18n="footer.company">Cég</h5><ul>
+          <li><a href="#" data-i18n="footer.about">Rólunk</a></li>
+          <li><a href="#" data-i18n="footer.partners">Partnerek</a></li>
+          <li><a href="#" data-i18n="footer.careers">Karrier</a></li>
+        </ul></div>
+        <div><h5 data-i18n="footer.support">Support</h5><ul>
+          <li><a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a></li>
+          <li><a href="#" data-i18n="footer.help">Súgóközpont</a></li>
+          <li><a href="#" data-i18n="footer.status">Rendszerstátusz</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.copy">© 2026 FESTIPAY Zrt. — Minden jog fenntartva.</div>
+        <div style="display:flex;gap:24px"><a href="#" data-i18n="footer.privacy">Adatkezelés</a><a href="#" data-i18n="footer.terms">ÁSZF</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

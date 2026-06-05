@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Árak — FESTISALE | Önálló terminál vs Kassza rendszer</title>
+  <meta name="description" content="Átlátható árazás: önálló terminál 0,65% jutalék havidíj nélkül, vagy kassza rendszer 25 000 Ft/hó + 0,35%. Interaktív kalkulátor.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link"><span data-i18n="nav.products">Termékek</span>
+            <svg class="nav-dropdown-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="terminalok.html" class="nav-dropdown-item"><strong data-i18n="nav.standalone">Önálló terminálok</strong><span data-i18n="nav.standalone_sub">NewLand S30 · N750 · N950S</span></a>
+            <a href="kassza.html" class="nav-dropdown-item"><strong data-i18n="nav.kassza">Kassza rendszer</strong><span data-i18n="nav.kassza_sub">Festisale + X800 · S90</span></a>
+          </div>
+        </div>
+        <a href="arak.html" class="nav-link active" data-i18n="nav.pricing">Árak</a>
+        <a href="kapcsolat.html" class="nav-link" data-i18n="nav.contact">Kapcsolat</a>
+      </div>
+      <div class="nav-cta-group">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="hu">HU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="kapcsolat.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Ajánlatkérés</a>
+        <button class="nav-burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile">
+    <a href="terminalok.html" data-i18n="nav.standalone">Önálló terminálok</a>
+    <a href="kassza.html" data-i18n="nav.kassza">Kassza rendszer</a>
+    <a href="arak.html" data-i18n="nav.pricing">Árak</a>
+    <a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow reveal in"><span data-i18n="arak.eyebrow">03 — Árazás</span></div>
+      <h1 class="h-display reveal in">
+        <span data-i18n="arak.h1_a">Két út.</span>
+        <span class="accent" data-i18n="arak.h1_b">Egyszerű árazás.</span>
+      </h1>
+      <p class="lead reveal in" style="margin-top: 28px" data-i18n="arak.lead">Nincs rejtett költség, nincs hűségidő. Válaszd ki, ami az üzletedhez illik — és skálázz amikor készen állsz.</p>
+    </div>
+  </section>
+
+  <!-- ============ PRICING CARDS ============ -->
+  <section class="section-pad bg-light">
+    <div class="container">
+      <div class="pricing-grid reveal-stagger">
+        <div class="pricing-card">
+          <h3 data-i18n="arak.standalone.t">Önálló terminál</h3>
+          <p class="sub" data-i18n="arak.standalone.sub">Csak kártyaelfogadás — havidíj nélkül.</p>
+          <div class="price">
+            <span class="amt">0,65%</span>
+          </div>
+          <div class="price-note" data-i18n="arak.standalone.per">tranzakcióra</div>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.standalone.l1">Nincs havidíj — soha</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.standalone.l2">NewLand S30, N750 vagy N950S</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.standalone.l3">NFC + chip + mágnessáv</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.standalone.l4">24/7 magyar support</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.standalone.l5">Bankfüggetlen</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.standalone.l6">12 hónap garancia</span></li>
+          </ul>
+          <a href="kapcsolat.html" class="btn btn-outline" data-i18n="cta.quote">Ajánlatkérés</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <span class="badge-featured" data-i18n="arak.kassza.badge">⭐ Legjobb érték</span>
+          <h3 data-i18n="arak.kassza.t">Kassza rendszer</h3>
+          <p class="sub" data-i18n="arak.kassza.sub">Festisale szoftver + NewLand hardver.</p>
+          <div class="price">
+            <span class="amt">25 000 Ft</span>
+            <span class="per">/ hó</span>
+          </div>
+          <div class="price-note" data-i18n="arak.kassza.per">+ havidíj</div>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.kassza.l1">Festisale szoftver licensz</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.kassza.l2">NAV-megfelelő kassza</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.kassza.l3">Készletkezelés + riportok</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.kassza.l4">Online számlázás</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.kassza.l5">0,35% tranzakciós díj</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> <span data-i18n="arak.kassza.l6">Helyszíni betanítás + frissítések</span></li>
+          </ul>
+          <a href="kapcsolat.html" class="btn btn-primary" data-i18n="cta.quote">Ajánlatkérés</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARE ============ -->
+  <section class="section-pad bg-white">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-head-left">
+          <div class="eyebrow"><span class="section-number">02</span> <span>Összehasonlítás</span></div>
+          <h2 class="h2" data-i18n="compare.title2">Hasonlítsd össze tételesen.</h2>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th data-i18n="arak.standalone.t">Önálló terminál</th>
+              <th data-i18n="arak.kassza.t">Kassza rendszer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td data-i18n="arak.compare.fee">Tranzakciós díj</td><td>0,65%</td><td>0,35%</td></tr>
+            <tr><td data-i18n="arak.compare.monthly">Havidíj</td><td>—</td><td>25 000 Ft</td></tr>
+            <tr><td data-i18n="arak.compare.setup">Setup költség</td><td>0 Ft</td><td>0 Ft</td></tr>
+            <tr><td data-i18n="arak.compare.nav">NAV adóügyi kassza</td><td class="cross">—</td><td class="check">✓</td></tr>
+            <tr><td data-i18n="arak.compare.inv">Online számlázás</td><td class="cross">—</td><td class="check">✓</td></tr>
+            <tr><td data-i18n="arak.compare.inv_t">Készletkezelés</td><td class="cross">—</td><td class="check">✓</td></tr>
+            <tr><td data-i18n="arak.compare.report">Riportok</td><td class="cross">—</td><td class="check">✓</td></tr>
+            <tr><td data-i18n="arak.compare.support">Magyar support</td><td class="check">✓</td><td class="check">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATOR ============ -->
+  <section class="section-pad bg-light">
+    <div class="container container-narrow">
+      <div class="sec-head reveal" style="justify-content: center; text-align: center">
+        <div class="sec-head-left">
+          <div class="eyebrow" style="justify-content: center"><span class="section-number">03</span> <span>Kalkulátor</span></div>
+          <h2 class="h2" data-i18n="calc.title">Számítsd ki, melyik éri meg neked.</h2>
+          <p class="lead" data-i18n="calc.lead">Állítsd be a forgalmadat és nézd meg, mennyivel jönnél jobban ki az egyik vagy másik modellel.</p>
+        </div>
+      </div>
+
+      <div class="calc reveal" id="calc">
+        <div class="calc-controls">
+          <div class="calc-field">
+            <label data-i18n="calc.turnover">Havi forgalom</label>
+            <input type="range" id="calc-turnover" class="calc-slider" min="500000" max="20000000" step="100000" value="3000000">
+            <div class="calc-value" id="calc-turnover-value">3 000 000 Ft</div>
+          </div>
+
+          <div class="calc-field">
+            <label data-i18n="calc.segment">Mit forgalmazol?</label>
+            <div class="calc-radio">
+              <label><input type="radio" name="seg" value="hospo" checked><span data-i18n="calc.seg1">Vendéglátás</span></label>
+              <label><input type="radio" name="seg" value="retail"><span data-i18n="calc.seg2">Kiskereskedelem</span></label>
+              <label><input type="radio" name="seg" value="service"><span data-i18n="calc.seg3">Szolgáltatás</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result">
+            <h4 data-i18n="calc.r1.t">Önálló terminál</h4>
+            <div class="big" id="calc-r1">19 500 Ft</div>
+            <div class="small" data-i18n="calc.cost">Havi költség</div>
+          </div>
+          <div class="calc-result">
+            <h4 data-i18n="calc.r2.t">Kassza rendszer</h4>
+            <div class="big" id="calc-r2">35 500 Ft</div>
+            <div class="small" data-i18n="calc.cost">Havi költség</div>
+          </div>
+        </div>
+
+        <p style="font-size: 12.5px; color: var(--color-gray); margin-top: 24px; text-align: center" data-i18n="calc.note">Az eredmény tájékoztató jellegű, a valós ajánlatot egyedi kalkuláció alapján adjuk.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HARDWARE TABLE ============ -->
+  <section class="section-pad bg-white">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-head-left">
+          <div class="eyebrow"><span class="section-number">04</span> <span>Hardver</span></div>
+          <h2 class="h2" data-i18n="hw.title">Hardver árak — egyszeri vétel.</h2>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <table class="hw-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th data-i18n="hw.col1">Modell</th>
+              <th data-i18n="hw.col2">Típus</th>
+              <th class="hw-price" data-i18n="hw.col3">Ár</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="hw-img"><img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202511/01a5e8d3c271663bbd4b840c916102c7.png" alt="S30"></td>
+              <td><strong>NewLand S30</strong></td>
+              <td>miniPOS</td>
+              <td class="hw-price">89 000 Ft</td>
+            </tr>
+            <tr>
+              <td class="hw-img"><img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202505/fa574e89eb28f24b46f828500aea4844.png" alt="N750"></td>
+              <td><strong>NewLand N750</strong></td>
+              <td>Android miniPOS</td>
+              <td class="hw-price">129 000 Ft</td>
+            </tr>
+            <tr>
+              <td class="hw-img"><img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202505/899a10c907e48c1782456b548c11c188.png" alt="N950S"></td>
+              <td><strong>NewLand N950S</strong></td>
+              <td>SmartPOS</td>
+              <td class="hw-price">189 000 Ft</td>
+            </tr>
+            <tr>
+              <td class="hw-img"><img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202511/f860396529bdf40c9ce5fc5e056dd986.png" alt="S90"></td>
+              <td><strong>NewLand S90 Dual</strong></td>
+              <td>Prémium portable</td>
+              <td class="hw-price">219 000 Ft</td>
+            </tr>
+            <tr>
+              <td class="hw-img"><img src="https://newlandwebsite.oss-us-east-1.aliyuncs.com/uploads/images/202505/e03260bdd63a6452f6b327e0a498686c.png" alt="X800"></td>
+              <td><strong>NewLand X800</strong></td>
+              <td>Smart ECR · dual display</td>
+              <td class="hw-price">249 000 Ft</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="eyebrow reveal" style="justify-content: center"><span data-i18n="finalcta.eyebrow">Készen állsz?</span></div>
+      <h2 class="h2 reveal">Kérj testreszabott ajánlatot.</h2>
+      <p class="lead reveal">Néhány adat, és 1 munkanapon belül visszajelzünk a pontos havi költségről.</p>
+      <div class="btn-group reveal">
+        <a href="kapcsolat.html" class="btn btn-primary btn-lg" data-i18n="cta.quote">Ajánlatkérés</a>
+        <a href="tel:+3615550100" class="btn btn-outline-light btn-lg" data-i18n="finalcta.btn_call">Hívás: +36 1 555 0100</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="color:#fff"><img src="images/festipay-logo-white.png" alt="Festipay" class="nav-logo-img"></div>
+          <p data-i18n="footer.tagline">Modern, bankfüggetlen kártyaelfogadás magyar kereskedőknek.</p>
+        </div>
+        <div><h5 data-i18n="footer.products">Termékek</h5><ul>
+          <li><a href="terminalok.html" data-i18n="nav.standalone">Önálló terminálok</a></li>
+          <li><a href="kassza.html" data-i18n="nav.kassza">Kassza rendszer</a></li>
+          <li><a href="arak.html" data-i18n="nav.pricing">Árak</a></li>
+        </ul></div>
+        <div><h5 data-i18n="footer.company">Cég</h5><ul>
+          <li><a href="#" data-i18n="footer.about">Rólunk</a></li>
+          <li><a href="#" data-i18n="footer.partners">Partnerek</a></li>
+          <li><a href="#" data-i18n="footer.careers">Karrier</a></li>
+        </ul></div>
+        <div><h5 data-i18n="footer.support">Support</h5><ul>
+          <li><a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a></li>
+          <li><a href="#" data-i18n="footer.help">Súgóközpont</a></li>
+          <li><a href="#" data-i18n="footer.status">Rendszerstátusz</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.copy">© 2026 FESTIPAY Zrt. — Minden jog fenntartva.</div>
+        <div style="display:flex;gap:24px"><a href="#" data-i18n="footer.privacy">Adatkezelés</a><a href="#" data-i18n="footer.terms">ÁSZF</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
