@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festisale Kassza — FestiPay | Integrált POS rendszer kis- és közepes vállalkozásoknak</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand: #264B5D;
+  --brand-dark: #1a3545;
+  --brand-light: #3a6b82;
+  --orange: #F48120;
+  --orange-dark: #d06b18;
+  --white: #ffffff;
+  --off-white: #F7F8FA;
+  --light: #EEF2F5;
+  --border: #DDE3E9;
+  --text: #1A2B38;
+  --muted: #6B8090;
+  --success: #27AE60;
+  --r: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); font-size: 15px; line-height: 1.6; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-mark {
+  width: 36px; height: 36px; background: var(--brand);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 14px; letter-spacing: -1px;
+}
+.nav-logo-text { font-size: 17px; font-weight: 700; color: var(--brand); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--brand); }
+.nav-links a.active { color: var(--brand); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.btn-phone { font-size: 13px; color: var(--brand); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.btn-cta-nav {
+  background: var(--orange); color: #fff;
+  padding: 9px 20px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background .2s, transform .1s;
+}
+.btn-cta-nav:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--brand-dark) 0%, var(--brand) 60%, #2d7a9a 100%);
+  padding: 80px 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
+}
+.hero-eyebrow span { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+.hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 20px; }
+.hero h1 em { color: var(--orange); font-style: normal; }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 32px; max-width: 460px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+.btn-primary {
+  background: var(--orange); color: #fff;
+  padding: 14px 28px; border-radius: var(--r);
+  font-size: 15px; font-weight: 700; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, transform .15s; border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.btn-secondary-hero {
+  background: rgba(255,255,255,0.1); color: #fff;
+  padding: 14px 28px; border-radius: var(--r);
+  font-size: 15px; font-weight: 600; text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s;
+}
+.btn-secondary-hero:hover { background: rgba(255,255,255,0.18); }
+.hero-trust { display: flex; gap: 20px; flex-wrap: wrap; }
+.hero-trust-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.65); }
+.hero-trust-item svg { flex-shrink: 0; }
+.hero-screen {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px 16px 0 0;
+  padding: 20px;
+  min-height: 320px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.screen-bar { background: rgba(255,255,255,0.1); border-radius: 6px; height: 36px; display: flex; align-items: center; padding: 0 14px; gap: 8px; }
+.screen-dot { width: 8px; height: 8px; border-radius: 50%; }
+.screen-content { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
+.screen-card { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; }
+.screen-card-label { font-size: 10px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.screen-card-val { font-size: 20px; font-weight: 700; color: #fff; }
+.screen-card-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.screen-list { grid-column: 1/-1; background: rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; }
+.screen-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 12px; color: rgba(255,255,255,0.7); }
+.screen-row:last-child { border: 0; }
+.screen-row-price { color: var(--orange); font-weight: 600; }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--brand);
+  padding: 28px 2rem;
+}
+.stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.stat { text-align: center; padding: 12px 0; border-right: 1px solid rgba(255,255,255,0.12); }
+.stat:last-child { border: 0; }
+.stat-num { font-size: 30px; font-weight: 800; color: var(--orange); }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; line-height: 1.4; }
+
+/* ── SECTION BASE ── */
+section { padding: 80px 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 12px;
+}
+.section-title { font-size: 32px; font-weight: 800; color: var(--brand); line-height: 1.2; margin-bottom: 14px; }
+.section-sub { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+
+/* ── HOW IT WORKS ── */
+.how-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+.how-grid::before {
+  content: ''; position: absolute;
+  top: 28px; left: 14%; right: 14%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--orange) 100%);
+  z-index: 0;
+}
+.how-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+.how-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--brand); color: #fff;
+  font-size: 20px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--brand);
+}
+.how-step:last-child .how-num { background: var(--orange); box-shadow: 0 0 0 3px var(--orange); }
+.how-title { font-size: 15px; font-weight: 700; color: var(--brand); margin-bottom: 8px; }
+.how-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── FEATURE EXPLORER ── */
+.explorer-section { background: var(--off-white); padding: 80px 2rem; }
+.explorer-wrap { max-width: 1100px; margin: 0 auto; }
+.explorer-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; margin-bottom: 32px; flex-wrap: wrap; }
+.explorer-title-block .section-sub { margin-bottom: 0; }
+.package-card {
+  background: var(--brand);
+  border-radius: var(--r);
+  padding: 24px 28px;
+  min-width: 220px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.package-card .pkg-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+.package-card .pkg-price { font-size: 34px; font-weight: 800; color: var(--orange); }
+.package-card .pkg-unit { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+.package-card .pkg-note { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 10px; line-height: 1.5; }
+
+/* counter row */
+.counter-row {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 24px;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.counter-item { display: flex; align-items: center; gap: 10px; }
+.counter-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.counter-icon.base { background: rgba(38,75,93,0.1); }
+.counter-icon.extra { background: rgba(244,129,32,0.1); }
+.counter-num { font-size: 22px; font-weight: 800; }
+.counter-num.base { color: var(--brand); }
+.counter-num.extra { color: var(--orange); }
+.counter-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.counter-sep { width: 1px; height: 32px; background: var(--border); }
+.counter-hint { font-size: 12px; color: var(--muted); flex: 1; }
+.counter-summary {
+  margin-left: auto;
+  background: rgba(244,129,32,0.08);
+  border: 1px solid rgba(244,129,32,0.2);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px; font-weight: 600; color: var(--orange);
+  display: none;
+}
+.counter-summary.visible { display: block; }
+
+/* category */
+.feat-category { margin-bottom: 28px; }
+.cat-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.cat-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.feat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex; align-items: flex-start; gap: 10px;
+  transition: border-color .15s, background .15s;
+}
+.feat-card.included {
+  background: rgba(38,75,93,0.03);
+  border-color: rgba(38,75,93,0.2);
+}
+.feat-card.addon { cursor: pointer; }
+.feat-card.addon:hover { border-color: rgba(244,129,32,0.4); background: rgba(244,129,32,0.02); }
+.feat-card.addon.active { border-color: var(--orange); background: rgba(244,129,32,0.05); }
+.feat-icon {
+  width: 28px; height: 28px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.feat-icon.inc { background: var(--brand); color: #fff; }
+.feat-icon.off { background: var(--light); color: var(--muted); border: 1px solid var(--border); }
+.feat-icon.on { background: var(--orange); color: #fff; }
+.feat-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.3; }
+.feat-tag { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.3; }
+.feat-badge {
+  display: inline-block; font-size: 9px; font-weight: 700;
+  padding: 2px 6px; border-radius: 4px; margin-left: 4px;
+  background: rgba(244,129,32,0.12); color: #c06000;
+  vertical-align: middle; text-transform: uppercase; letter-spacing: .5px;
+}
+
+/* ── PRICING ── */
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pricing-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+  position: relative;
+  transition: border-color .2s, transform .2s;
+}
+.pricing-card:hover { transform: translateY(-3px); }
+.pricing-card.featured { border-color: var(--orange); }
+.pricing-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--orange); color: #fff;
+  font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px;
+  white-space: nowrap; letter-spacing: .5px;
+}
+.pricing-name { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.pricing-price { font-size: 38px; font-weight: 800; color: var(--brand); line-height: 1; }
+.pricing-price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+.pricing-desc { font-size: 13px; color: var(--muted); margin: 14px 0 20px; line-height: 1.6; border-top: 1px solid var(--border); padding-top: 16px; }
+.pricing-features { list-style: none; margin-bottom: 24px; }
+.pricing-features li { padding: 7px 0; font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 9px; border-bottom: 1px solid var(--light); }
+.pricing-features li:last-child { border: 0; }
+.pricing-features li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: rgba(39,174,96,0.15); flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%2327AE60' d='M6.5 11.5L3 8l1-1 2.5 2.5 5-5 1 1z'/%3E%3C/svg%3E"); background-size: contain; }
+.pricing-cta { width: 100%; padding: 13px; border-radius: 9px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: .2s; text-align: center; }
+.pricing-cta.primary { background: var(--orange); color: #fff; }
+.pricing-cta.primary:hover { background: var(--orange-dark); }
+.pricing-cta.secondary { background: transparent; color: var(--brand); border: 1.5px solid var(--brand); }
+.pricing-cta.secondary:hover { background: var(--light); }
+
+/* ── HARDWARE ── */
+.hw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hw-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.hw-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(38,75,93,0.1); }
+.hw-img {
+  background: linear-gradient(135deg, var(--brand) 0%, #3a6b82 100%);
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+.hw-body { padding: 24px; }
+.hw-name { font-size: 18px; font-weight: 800; color: var(--brand); margin-bottom: 4px; }
+.hw-sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.hw-price { font-size: 22px; font-weight: 800; color: var(--orange); margin-bottom: 14px; }
+.hw-price span { font-size: 13px; font-weight: 400; color: var(--muted); }
+.hw-features { list-style: none; }
+.hw-features li { font-size: 13px; color: var(--muted); padding: 5px 0; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--light); }
+.hw-features li:last-child { border: 0; }
+.hw-features li::before { content: '✓'; color: var(--success); font-weight: 700; }
+.hw-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 5px; background: rgba(38,75,93,0.08); color: var(--brand); margin-top: 14px; }
+
+/* ── FAQ ── */
+.faq-section { background: var(--off-white); }
+.faq-list { max-width: 780px; margin: 0 auto; }
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  padding: 18px 22px;
+  font-size: 15px; font-weight: 600; color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  user-select: none;
+}
+.faq-q:hover { background: var(--off-white); }
+.faq-arrow { font-size: 20px; color: var(--orange); font-weight: 300; transition: transform .2s; flex-shrink: 0; }
+.faq-a { padding: 0 22px; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; }
+.faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
+.faq-item.open .faq-arrow { transform: rotate(45deg); }
+.faq-a p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── ORDER FORM ── */
+.order-section { background: var(--brand); }
+.order-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.order-left h2 { font-size: 30px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+.order-left p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 28px; }
+.order-promise { display: flex; flex-direction: column; gap: 12px; }
+.order-promise-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.8); }
+.promise-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.order-form {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px;
+}
+.form-title { font-size: 17px; font-weight: 700; color: var(--brand); margin-bottom: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 14px; color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: border-color .15s;
+  background: #fff;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--brand);
+}
+.form-group textarea { resize: none; height: 80px; }
+.form-select-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.form-select-opt {
+  border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+  font-size: 13px; font-weight: 500; color: var(--muted);
+  cursor: pointer; text-align: center; transition: .15s;
+  user-select: none;
+}
+.form-select-opt:hover { border-color: var(--orange); color: var(--orange); }
+.form-select-opt.sel { border-color: var(--orange); background: rgba(244,129,32,0.06); color: var(--orange); font-weight: 700; }
+.form-checkbox { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.form-checkbox input { margin-top: 2px; flex-shrink: 0; }
+.form-checkbox a { color: var(--brand); }
+.btn-form-submit {
+  width: 100%; background: var(--orange); color: #fff;
+  padding: 14px; border-radius: 9px; border: none;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  transition: background .2s, transform .15s; font-family: 'Inter', sans-serif;
+}
+.btn-form-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.form-footer-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+/* ── FOOTER ── */
+footer { background: var(--brand-dark); padding: 48px 2rem 28px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-top: 12px; max-width: 260px; }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 9px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.65); text-decoration: none; transition: color .15s; }
+.footer-col ul li a:hover { color: var(--orange); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+.footer-logo { display: flex; align-items: center; gap: 9px; }
+.footer-logo-mark { width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 12px; }
+.footer-logo-text { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.85); }
+
+/* ── STICKY BOTTOM BAR ── */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+  background: var(--brand-dark);
+  border-top: 2px solid var(--orange);
+  padding: 12px 2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  transform: translateY(100%); transition: transform .3s ease;
+}
+.sticky-bar.visible { transform: translateY(0); }
+.sticky-bar-text { font-size: 14px; color: rgba(255,255,255,0.8); }
+.sticky-bar-text strong { color: #fff; }
+.sticky-bar-actions { display: flex; gap: 10px; align-items: center; }
+.sticky-phone { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: #1a3545; color: #fff; padding: 14px 24px;
+  border-radius: 10px; border-left: 4px solid var(--success);
+  font-size: 14px; font-weight: 500;
+  opacity: 0; transition: opacity .3s, transform .3s; pointer-events: none;
+  z-index: 999; white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── SUCCESS SCREEN ── */
+.success-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(26,53,69,0.92);
+  align-items: center; justify-content: center;
+}
+.success-overlay.show { display: flex; }
+.success-card {
+  background: #fff; border-radius: 20px; padding: 48px;
+  text-align: center; max-width: 420px; width: 90%;
+}
+.success-icon { font-size: 52px; margin-bottom: 16px; }
+.success-card h2 { font-size: 22px; font-weight: 800; color: var(--brand); margin-bottom: 10px; }
+.success-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+.success-close { background: var(--brand); color: #fff; border: none; border-radius: 9px; padding: 12px 28px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-inner, .pricing-grid, .hw-grid, .order-inner, .footer-top { grid-template-columns: 1fr; }
+  .hero-screen { display: none; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .how-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .how-grid::before { display: none; }
+  nav .nav-links { display: none; }
+  .explorer-header { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-text"><strong>Festisale kassza</strong> — Meggyőzött? Kérjen ajánlatot most.</div>
+  <div class="sticky-bar-actions">
+    <span class="sticky-phone">📞 +36 30 XXX XXXX</span>
+    <a href="#order" class="btn-primary" style="font-size:13px; padding:10px 20px;">Ajánlatot kérek →</a>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Köszönjük! 24 órán belül felhívjuk.</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2>Megkaptuk az igénylését!</h2>
+    <p>Értékesítőnk <strong>24 órán belül</strong> felhívja Önt, hogy egyeztessen a részletekről és a szállítási dátumról.</p>
+    <p style="margin-bottom:0; font-size:13px; color:#999;">Addig is, ha sürgős: <strong style="color:#264B5D;">+36 30 XXX XXXX</strong></p>
+    <br>
+    <button class="success-close" onclick="closeSuccess()">Rendben, várom a hívást</button>
+  </div>
+</div>
+
+<!-- ══════ NAV ══════ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">FP</div>
+    <span class="nav-logo-text">FestiPay</span>
+  </a>
+  <div class="nav-links">
+    <a href="#how">Hogyan működik?</a>
+    <a href="#features" class="active">Funkciók</a>
+    <a href="#pricing">Árak</a>
+    <a href="#hardware">Hardver</a>
+    <a href="#faq">GYIK</a>
+    <a href="#" style="color:var(--brand); font-weight:600;">Kártyaelfogadás ↗</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+3630XXXXXXX" class="btn-phone">📞 +36 30 XXX XXXX</a>
+    <a href="#order" class="btn-cta-nav">Ajánlatot kérek</a>
+  </div>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span></span> Festisale kassza rendszer</div>
+      <h1>Teljes kassza megoldás —<br><em>NAV-tól a kártyáig.</em></h1>
+      <p class="hero-sub">Integrált POS rendszer kiskereskedőknek és vendéglátósoknak. NAV-megfelelő, kártyaelfogadással, valós idejű riportokkal. Betanítás 30 perc alatt.</p>
+      <div class="hero-ctas">
+        <a href="#order" class="btn-primary">Ajánlatot kérek — ingyen →</a>
+        <a href="#features" class="btn-secondary-hero">Megnézem a funkciókat ↓</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="rgba(255,255,255,0.2)"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+          NAV adóügyi integráció
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="rgba(255,255,255,0.2)"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Apple Pay & Google Pay
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="rgba(255,255,255,0.2)"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Betanítás 30 perc
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-screen">
+        <div class="screen-bar">
+          <div class="screen-dot" style="background:#ff5f57"></div>
+          <div class="screen-dot" style="background:#febc2e"></div>
+          <div class="screen-dot" style="background:#28c840"></div>
+          <div style="flex:1; background:rgba(255,255,255,0.07); border-radius:4px; height:18px; margin-left:8px;"></div>
+        </div>
+        <div class="screen-content">
+          <div class="screen-card">
+            <div class="screen-card-label">Mai forgalom</div>
+            <div class="screen-card-val">187 400 Ft</div>
+            <div class="screen-card-sub">↑ 12% tegnap óta</div>
+          </div>
+          <div class="screen-card">
+            <div class="screen-card-label">Tranzakciók</div>
+            <div class="screen-card-val">43</div>
+            <div class="screen-card-sub">ebből 38 kártyás</div>
+          </div>
+          <div class="screen-list">
+            <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:8px;">Utolsó tranzakciók</div>
+            <div class="screen-row"><span>Hamburger + Kóla</span><span class="screen-row-price">3 800 Ft</span></div>
+            <div class="screen-row"><span>Reggeli szett × 2</span><span class="screen-row-price">6 200 Ft</span></div>
+            <div class="screen-row"><span>Espresso dupla</span><span class="screen-row-price">890 Ft</span></div>
+            <div class="screen-row"><span>Napi menü</span><span class="screen-row-price">2 490 Ft</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ STATS ══════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">30 perc</div>
+      <div class="stat-label">alatt betanítható a teljes rendszer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">250 000+</div>
+      <div class="stat-label">potenciális helyszín Magyarországon</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">18%/év</div>
+      <div class="stat-label">a bankkártyás fizetések növekedési üteme</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">42 500 Ft</div>
+      <div class="stat-label">átlagos havi bevétel kereskedőnként</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ HOW IT WORKS ══════ -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-eyebrow">Hogyan működik?</div>
+    <div class="section-title">Négy lépés, és már megy a kassza</div>
+    <div class="section-sub">Nincs hónapokig tartó bankváltás, nincs bonyolult telepítés.</div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-title">Ajánlatot kér</div>
+        <div class="how-desc">Kitölti a 5 mezős formot. Értékesítőnk 24 h-n belül visszahívja és egyeztet az igényeiről.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-title">Hardvert kiválasztja</div>
+        <div class="how-desc">X800 asztali terminál vagy X5 mobil — attól függ, fix pultnál vagy mozgósan dolgozik.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-title">Kiszállítjuk</div>
+        <div class="how-desc">A terminál 1–2 munkanapon belül megérkezik. Helyszíni beüzemelés, betanítás 30 perc alatt.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-title">Elkezdi használni ✓</div>
+        <div class="how-desc">Másnaptól fogad kártyát, nyomtat NAV-os blokkot és látja a forgalmi riportjait.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FEATURE EXPLORER ══════ -->
+<section class="explorer-section" id="features">
+  <div class="explorer-wrap">
+    <div class="explorer-header">
+      <div class="explorer-title-block">
+        <div class="section-eyebrow">Funkciók</div>
+        <div class="section-title">Fedezze fel, mit tud a rendszer</div>
+        <p class="section-sub">Az alap csomagban benne van minden, ami a napi működéshez kell. Kattintson az extra modulokra, hogy lássa, mivel bővíthető később.</p>
+      </div>
+      <div class="package-card">
+        <div class="pkg-label">Alap csomag</div>
+        <div class="pkg-price">25 000 Ft</div>
+        <div class="pkg-unit">/ hónap</div>
+        <div class="pkg-note">+ hardver egyszeri<br>+ 0,35% forgalmi jutalék</div>
+      </div>
+    </div>
+
+    <!-- Counter row -->
+    <div class="counter-row">
+      <div class="counter-item">
+        <div class="counter-icon base">✓</div>
+        <div class="counter-num base" id="cntBase">12</div>
+        <div class="counter-desc">alap funkció<br>belefoglalva</div>
+      </div>
+      <div class="counter-sep"></div>
+      <div class="counter-item">
+        <div class="counter-icon extra">+</div>
+        <div class="counter-num extra" id="cntExtra">0</div>
+        <div class="counter-desc">extra modul<br>kiválasztva</div>
+      </div>
+      <div class="counter-sep"></div>
+      <div class="counter-hint">Kattintson az extra modulokra hogy lássa milyen funkciókat tud majd hozzáadni a rendszerhez</div>
+      <div class="counter-summary" id="counterSummary"></div>
+    </div>
+
+    <!-- Base features -->
+    <div class="feat-category">
+      <div class="cat-label">✓ Alap csomagban benne van</div>
+      <div class="feat-grid" id="baseGrid"></div>
+    </div>
+
+    <!-- Addons by category -->
+    <div id="addonCategories"></div>
+
+  </div>
+</section>
+
+<!-- ══════ PRICING ══════ -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-eyebrow">Árak</div>
+    <div class="section-title">Válassza ki a megfelelő csomagot</div>
+    <div class="section-sub">Mindkét megoldás bankfüggetlen — nincs bankváltás, nincs hosszú ügyintézés.</div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Önálló kártyaelfogadás</div>
+        <div class="pricing-price">44 400 Ft <span>egyszeri (S30)</span></div>
+        <p class="pricing-desc">Ha csak bankkártyát szeretne fogadni, a NAV-kassza nélkül. Kis boltoknak, standoknak, szállítóknak.</p>
+        <ul class="pricing-features">
+          <li>NewLand S30 vagy S90 terminál</li>
+          <li>NFC, chip, mágnescsík, Apple Pay</li>
+          <li>4G / WiFi kapcsolat</li>
+          <li>Beépített blokk nyomtató</li>
+          <li>0,65% elfogadói jutalék</li>
+          <li>Magyar ügyfélszolgálat</li>
+        </ul>
+        <button class="pricing-cta secondary" onclick="scrollToOrder('S30/S90')">Érdekel, ajánlatot kérek</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">⭐ Legtöbben ezt választják</div>
+        <div class="pricing-name">Festisale kassza csomag</div>
+        <div class="pricing-price">25 000 Ft <span>/ hónap</span></div>
+        <p class="pricing-desc">Teljes POS rendszer NAV-integrációval, készletkezeléssel és riportokkal. Étteremnek, boltnak, kávézónak.</p>
+        <ul class="pricing-features">
+          <li>Festisale kassza szoftver</li>
+          <li>NAV adóügyi nyomtató integráció</li>
+          <li>Valós idejű készletkezelés</li>
+          <li>Napi / havi forgalmi riportok</li>
+          <li>Bankkártya + készpénz egységesen</li>
+          <li>NewLand X800 vagy X5 terminál</li>
+          <li>0,35% elfogadói jutalék</li>
+          <li>Betanítás 30 perc alatt</li>
+        </ul>
+        <button class="pricing-cta primary" onclick="scrollToOrder('Festisale kassza')">Ajánlatot kérek →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ HARDWARE ══════ -->
+<section id="hardware" style="background:var(--off-white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Hardver</div>
+    <div class="section-title">Melyik terminált válasszam?</div>
+    <div class="section-sub">Mindkét eszköz a Festisale kasszát futtatja. A különbség: hol és hogyan dolgozik.</div>
+    <div class="hw-grid">
+      <div class="hw-card">
+        <div class="hw-img">🖥️</div>
+        <div class="hw-body">
+          <div class="hw-name">NewLand X800</div>
+          <div class="hw-sub">Asztali POS terminál — kasszapulthoz, recepcióhoz</div>
+          <div class="hw-price">148 000 Ft <span>egyszeri (hardver)</span></div>
+          <ul class="hw-features">
+            <li>Nagy érintőképernyős POS</li>
+            <li>Beépített nyomtató + vonalkód scanner</li>
+            <li>LAN / WiFi kapcsolat</li>
+            <li>Festisale natív integráció</li>
+            <li>24/7 folyamatos üzemelési mód</li>
+          </ul>
+          <span class="hw-tag">Ideális: étterem · bolt · kávézó</span>
+        </div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-img">📱</div>
+        <div class="hw-body">
+          <div class="hw-name">NewLand X5</div>
+          <div class="hw-sub">Mobil POS terminál — kiszálláshoz, standokhoz, pulthoz</div>
+          <div class="hw-price">222 000 Ft <span>egyszeri (hardver)</span></div>
+          <ul class="hw-features">
+            <li>Hordozható Android alapú terminál</li>
+            <li>4G / WiFi, beépített nyomtató</li>
+            <li>Festisale kassza szoftver</li>
+            <li>NFC érintéses fizetés</li>
+            <li>Egész napos akkumulátor</li>
+          </ul>
+          <span class="hw-tag">Ideális: piac · catering · rendezvény</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FAQ ══════ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-eyebrow">Kérdések</div>
+    <div class="section-title" style="text-align:center;">Gyakori kérdések</div>
+    <div class="section-sub" style="margin:0 auto 48px; text-align:center;">Ha valami nem egyértelmű, hívjon minket: <strong>+36 30 XXX XXXX</strong></div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ══════ ORDER FORM ══════ -->
+<section class="order-section" id="order">
+  <div class="order-inner">
+    <div class="order-left">
+      <h2>Kérjen ajánlatot — visszahívjuk 24 h-n belül</h2>
+      <p>Nem kell előre döntenie. Értékesítőnk felhívja, megbeszélik az igényeket, és személyre szabott ajánlatot küld.</p>
+      <div class="order-promise">
+        <div class="order-promise-item">
+          <div class="promise-icon">📞</div>
+          Visszahívás 24 órán belül — munkanapon
+        </div>
+        <div class="order-promise-item">
+          <div class="promise-icon">📦</div>
+          Kiszállítás 1–2 munkanapon belül
+        </div>
+        <div class="order-promise-item">
+          <div class="promise-icon">🎓</div>
+          Helyszíni betanítás, 30 perces rendszerindítás
+        </div>
+        <div class="order-promise-item">
+          <div class="promise-icon">🔒</div>
+          Adatait bizalmasan kezeljük, nem iratkozik fel semmire
+        </div>
+      </div>
+    </div>
+    <div class="order-form">
+      <div class="form-title">Ajánlatkérő form</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Neve *</label>
+          <input type="text" placeholder="Kovács János" id="fName">
+        </div>
+        <div class="form-group">
+          <label>Telefonszám *</label>
+          <input type="tel" placeholder="+36 30 XXX XXXX" id="fPhone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="info@uzletem.hu" id="fEmail">
+      </div>
+      <div class="form-group">
+        <label>Melyik megoldás érdekli?</label>
+        <div class="form-select-group">
+          <div class="form-select-opt sel" id="opt1" onclick="selectOpt('opt1')">Festisale kassza</div>
+          <div class="form-select-opt" id="opt2" onclick="selectOpt('opt2')">Önálló kártyaelfogadás</div>
+          <div class="form-select-opt" id="opt3" onclick="selectOpt('opt3')">Mindkettő</div>
+          <div class="form-select-opt" id="opt4" onclick="selectOpt('opt4')">Még nem tudom</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Üzlet típusa</label>
+        <select id="fType">
+          <option value="">Válasszon…</option>
+          <option>Étterem / kocsma / kávézó</option>
+          <option>Kiskereskedés / bolt</option>
+          <option>Pékség / cukrászda</option>
+          <option>Pláza / stand</option>
+          <option>Szállás / szálloha</option>
+          <option>Catering / rendezvény</option>
+          <option>Egyéb szolgáltatás</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Üzenet (opcionális)</label>
+        <textarea id="fMsg" placeholder="Pl. 2 terminált szeretnék, egy boltba és egy kiszállítónak…"></textarea>
+      </div>
+      <div class="form-checkbox">
+        <input type="checkbox" id="fConsent">
+        <label for="fConsent">Elfogadom az <a href="#">Adatkezelési tájékoztatót</a> és az <a href="#">Általános Szerződési Feltételeket</a>.</label>
+      </div>
+      <button class="btn-form-submit" onclick="submitForm()">Ajánlatot kérek — visszahívnak 24h-n belül ✓</button>
+      <p class="form-footer-note">🔒 Adatait bizalmasan kezeljük</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">FP</div>
+          <span class="footer-logo-text">FestiPay</span>
+        </div>
+        <p>Bankfüggetlen bankkártya-elfogadás és integrált kassza megoldások kis- és közepes vállalkozásoknak Magyarországon.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Termékek</h4>
+        <ul>
+          <li><a href="#">Festisale kassza</a></li>
+          <li><a href="#">NewLand S30</a></li>
+          <li><a href="#">NewLand S90</a></li>
+          <li><a href="#">NewLand X800</a></li>
+          <li><a href="#">NewLand X5</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Cég</h4>
+        <ul>
+          <li><a href="#">Rólunk</a></li>
+          <li><a href="#">Referenciák</a></li>
+          <li><a href="#">Partnerprogram</a></li>
+          <li><a href="#">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Elérhetőség</h4>
+        <ul>
+          <li><a href="#">info@festipay.hu</a></li>
+          <li><a href="#">+36 30 XXX XXXX</a></li>
+          <li><a href="#">ÁSZF</a></li>
+          <li><a href="#">Adatvédelem</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FestiPay Zrt. · Minden jog fenntartva</p>
+      <p>Cashless Payment Solutions · festipay.hu</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── DATA ── */
+const baseFeatures = [
+  {name:"NAV adóügyi integráció", icon:"🧾", tag:"törvényi megfelelés"},
+  {name:"Bankkártya + készpénz", icon:"💳", tag:"minden fizetési mód"},
+  {name:"Készletkezelés", icon:"📦", tag:"vonalkód olvasóval"},
+  {name:"Napi / havi riportok", icon:"📊", tag:"forgalmi kimutatások"},
+  {name:"Online számla / nyugta", icon:"🧾", tag:"NAV-kompatibilis"},
+  {name:"Több felhasználó", icon:"👥", tag:"jogosultsági szintek"},
+  {name:"0–24 support", icon:"🎧", tag:"magyar nyelvű"},
+  {name:"Termékadatbázis", icon:"🗄️", tag:"korlátlan termék"},
+  {name:"Napi zárás", icon:"🔒", tag:"automatikus elszámolás"},
+  {name:"Több fizetési mód", icon:"💰", tag:"utalás, bón, kupon"},
+  {name:"Számla módosítás", icon:"✏️", tag:"stornó, visszáru"},
+  {name:"Offline mód", icon:"📡", tag:"internet nélkül is"},
+];
+
+const addonCategories = [
+  {
+    label:"💰 Értékesítés és pénzügy", id:"sales",
+    items:[
+      {name:"Akciók és kedvezmények", icon:"🏷️", tag:"időzített promóciók"},
+      {name:"Visszáru kezelés", icon:"↩️", tag:"visszatérítési folyamat"},
+      {name:"Proforma nyomtatás", icon:"🖨️", tag:"ajánlat / díjbekérő"},
+      {name:"Előrendelés kezelés", icon:"⏱️", tag:"foglaláshoz kapcsolva"},
+      {name:"Mérlegkapcsolat", icon:"⚖️", tag:"pékség, zöldséges"},
+      {name:"Pénztárgépkapcsolat", icon:"💻", tag:"meglévő géphez"},
+      {name:"Félkész termékek", icon:"🍳", tag:"receptúra kezelés"},
+    ]
+  },
+  {
+    label:"⭐ Vendég- és vásárlókezelés", id:"guest",
+    items:[
+      {name:"Törzsvásárlói rendszer", icon:"🌟", tag:"pont, szint, jutalom", soon:true},
+      {name:"Ajándékkártya", icon:"🎁", tag:"értékkártya kezelés", soon:true},
+      {name:"Asztalkezelés", icon:"🪑", tag:"éttermi asztal és felszolgálás"},
+      {name:"QR kódos étlap", icon:"📲", tag:"asztalnál rendelés", soon:true},
+      {name:"Publikus asztalfoglalás", icon:"📅", tag:"online foglalási felület", soon:true},
+      {name:"Vendég kijáró", icon:"🚪", tag:"éttermi számlázás"},
+      {name:"Személyi fogyasztás", icon:"👤", tag:"dolgozói számla"},
+    ]
+  },
+  {
+    label:"🚀 Szállítás és online integráció", id:"delivery",
+    items:[
+      {name:"Foodora integráció", icon:"🍔", tag:"rendelések automatikus importja"},
+      {name:"Wolt integráció", icon:"⚡", tag:"valós idejű szinkron"},
+      {name:"Wolt Direct integráció", icon:"🔄", tag:"saját futárhoz"},
+      {name:"Falatozz.hu integráció", icon:"🍽️", tag:"hazai platform"},
+      {name:"Kiszállítás kezelés", icon:"🚚", tag:"futárok, zónák, időablak"},
+    ]
+  },
+  {
+    label:"⚙️ Haladó és speciális modulok", id:"advanced",
+    items:[
+      {name:"Többnyelvűség", icon:"🌍", tag:"idegenforgalomhoz"},
+      {name:"Konyhai kijáró (KDS)", icon:"👨‍🍳", tag:"konyhai kijelző"},
+      {name:"Sorszám kijáró", icon:"🔢", tag:"várótermi kijelző"},
+      {name:"Visszatéríthető kim.", icon:"📈", tag:"haladó analitika"},
+      {name:"Adóügyi ny. integráció", icon:"🖨️", tag:"külső eszközök"},
+    ]
+  }
+];
+
+const faqs = [
+  {q:"Kell hozzá bankszámlát nyitnom?", a:"Nem. A FestiPay bankfüggetlen megoldás — a meglévő bankszámlájához aktiválható, nincs bankváltás és hosszú jóváhagyási folyamat."},
+  {q:"Mennyibe kerül havonta a fenntartás?", a:"A Festisale kassza csomagnál 25 000 Ft/hó a szoftver díja, plusz 0,35% elfogadói jutalék a kártyás forgalom után. Nincs rejtett díj."},
+  {q:"Mikor kapom meg a terminált rendelés után?", a:"Általában 1–2 munkanapon belül. Értékesítőnk visszahívja Önt és pontosan egyezteti a szállítási dátumot és a helyszíni beüzemelés idejét."},
+  {q:"Mi van, ha elromlik a terminál?", a:"Magyar nyelvű ügyfélszolgálat, csereterminál program. Nem marad kereskedő működő terminál nélkül — ez a mi garanciánk."},
+  {q:"Elfogadja az Apple Pay-t és Google Pay-t?", a:"Igen. Minden modern érintéses (NFC) fizetést elfogad — Apple Pay, Google Pay, hagyományos chip és mágnescsík egyaránt."},
+  {q:"A Festisale kassza megfelel a NAV előírásoknak?", a:"Igen. A rendszer teljes NAV adóügyi nyomtató integrációval rendelkezik, online számlát és blokkot is nyomtat, törvényi megfelelés garantált."},
+  {q:"Hány terminált lehet összekapcsolni egy helyszínen?", a:"Korlátlan. Az X800 asztali és X5 mobil terminálok is kapcsolódhatnak ugyanahhoz a Festisale rendszerhez — pultonként külön terminállal."},
+];
+
+/* ── RENDER BASE FEATURES ── */
+function renderBase(){
+  const g = document.getElementById('baseGrid');
+  baseFeatures.forEach(f => {
+    const d = document.createElement('div');
+    d.className = 'feat-card included';
+    d.innerHTML = `<div class="feat-icon inc">${f.icon}</div><div><div class="feat-name">${f.name}</div><div class="feat-tag">${f.tag}</div></div>`;
+    g.appendChild(d);
+  });
+}
+
+/* ── RENDER ADDON CATEGORIES ── */
+function renderAddons(){
+  const container = document.getElementById('addonCategories');
+  addonCategories.forEach(cat => {
+    const section = document.createElement('div');
+    section.className = 'feat-category';
+    section.innerHTML = `<div class="cat-label">${cat.label}</div><div class="feat-grid" id="grid-${cat.id}"></div>`;
+    container.appendChild(section);
+    const g = section.querySelector(`#grid-${cat.id}`);
+    cat.items.forEach(f => {
+      const d = document.createElement('div');
+      d.className = 'feat-card addon';
+      d.dataset.active = '0';
+      d.innerHTML = `<div class="feat-icon off">${f.icon}</div><div><div class="feat-name">${f.name}${f.soon ? '<span class="feat-badge">hamarosan</span>' : ''}</div><div class="feat-tag">${f.tag}</div></div>`;
+      d.addEventListener('click', () => toggleAddon(d));
+      g.appendChild(d);
+    });
+  });
+}
+
+function toggleAddon(el){
+  const on = el.dataset.active === '1';
+  el.dataset.active = on ? '0' : '1';
+  el.classList.toggle('active', !on);
+  el.querySelector('.feat-icon').className = `feat-icon ${!on ? 'on' : 'off'}`;
+  updateCounter();
+}
+
+function updateCounter(){
+  const active = document.querySelectorAll('.feat-card.addon.active').length;
+  document.getElementById('cntExtra').textContent = active;
+  const summary = document.getElementById('counterSummary');
+  if(active > 0){
+    summary.textContent = `${baseFeatures.length + active} funkció összesen`;
+    summary.classList.add('visible');
+  } else {
+    summary.classList.remove('visible');
+  }
+}
+
+/* ── RENDER FAQ ── */
+function renderFaq(){
+  const list = document.getElementById('faqList');
+  faqs.forEach((f, i) => {
+    const item = document.createElement('div');
+    item.className = 'faq-item';
+    item.innerHTML = `<div class="faq-q" onclick="toggleFaq(${i})">${f.q}<span class="faq-arrow">+</span></div><div class="faq-a"><p>${f.a}</p></div>`;
+    list.appendChild(item);
+  });
+}
+
+function toggleFaq(idx){
+  const items = document.querySelectorAll('.faq-item');
+  items[idx].classList.toggle('open');
+}
+
+/* ── FORM ── */
+function selectOpt(id){
+  ['opt1','opt2','opt3','opt4'].forEach(o => document.getElementById(o).classList.remove('sel'));
+  document.getElementById(id).classList.add('sel');
+}
+
+function scrollToOrder(product){
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+
+function submitForm(){
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const consent = document.getElementById('fConsent').checked;
+  if(!name){ alert('Kérem adja meg a nevét.'); return; }
+  if(!phone){ alert('Kérem adja meg a telefonszámát.'); return; }
+  if(!consent){ alert('Kérem fogadja el az adatkezelési tájékoztatót.'); return; }
+  document.getElementById('successOverlay').classList.add('show');
+}
+
+function closeSuccess(){
+  document.getElementById('successOverlay').classList.remove('show');
+}
+
+/* ── STICKY BAR ── */
+window.addEventListener('scroll', () => {
+  const bar = document.getElementById('stickyBar');
+  const hero = document.querySelector('.hero');
+  if(window.scrollY > hero.offsetHeight){
+    bar.classList.add('visible');
+  } else {
+    bar.classList.remove('visible');
+  }
+});
+
+/* ── INIT ── */
+renderBase();
+renderAddons();
+renderFaq();
+</script>
+</body>
+</html>
