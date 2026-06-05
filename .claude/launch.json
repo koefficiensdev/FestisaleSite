@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "festisale",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "5173"],
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/markirichard/Documents/GitHub/FestisaleSite && exec python3 -m http.server 5173"],
       "port": 5173
     }
   ]

@@ -128,13 +128,48 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Contact form ---------- */
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', e => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : '';
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       if (!form.reportValidity()) return;
-      form.classList.add('hide');
-      form.style.display = 'none';
-      const success = document.getElementById('form-success');
-      if (success) success.classList.add('show');
+
+      const data = {
+        name: form.elements['name'].value,
+        company: form.elements['company'].value,
+        email: form.elements['email'].value,
+        phone: form.elements['phone'].value,
+        segment: form.elements['segment'].value,
+        product: form.elements['product'].value,
+        message: form.elements['message'].value,
+        _subject: 'Új ajánlatkérés — festisale.hu',
+        _template: 'table'
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '…';
+      }
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/drgzrolls@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error('Network error');
+        form.classList.add('hide');
+        form.style.display = 'none';
+        const success = document.getElementById('form-success');
+        if (success) success.classList.add('show');
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        alert('A küldés nem sikerült. Próbáld újra, vagy írj közvetlenül: info@festipay.hu');
+      }
     });
   }
 
