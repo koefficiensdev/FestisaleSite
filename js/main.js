@@ -420,4 +420,35 @@ document.addEventListener('DOMContentLoaded', () => {
     el.focus();
     setTimeout(() => { el.style.borderColor = ''; }, 1800);
   }
+
+  /* ---------- Product galleries (thumbnail switch) ---------- */
+  document.querySelectorAll('[data-gallery]').forEach(visual => {
+    const mainImg = visual.querySelector('.product-main-img');
+    const thumbs = visual.querySelectorAll('.product-thumb');
+    if (!mainImg || thumbs.length === 0) return;
+
+    // Preload thumb targets so the swap is instant
+    thumbs.forEach(t => {
+      const src = t.dataset.src;
+      if (src) { const i = new Image(); i.src = src; }
+    });
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const src = thumb.dataset.src;
+        if (!src || mainImg.getAttribute('src') === src) return;
+
+        // Crossfade: dim → swap → restore
+        visual.classList.add('is-switching');
+        const swap = () => {
+          mainImg.src = src;
+          requestAnimationFrame(() => visual.classList.remove('is-switching'));
+        };
+        setTimeout(swap, 220);
+
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  });
 });
